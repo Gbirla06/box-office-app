@@ -2,7 +2,7 @@ import { useState } from "react";
 import { searchForShows, searchForPeople } from "./../../src/Api/tvmaz";
 import SearchForm from "./../Components/SearchForm";
 import ShowGrid from "../Components/shows/ShowGrid";
-import ActorsGrid from "../Components/actors/ActorsGrid"
+import ActorsGrid from "../Components/actors/ActorsGrid";
 
 
 const Home = () => {
@@ -31,7 +31,7 @@ const Home = () => {
     if(apiData?.length ===0){
       return <div>No result found</div>
     }
-    if (apiData) {
+    if(apiData) {
       return apiData[0].show
         ? <ShowGrid shows={apiData}/>
         : <ActorsGrid actors={apiData}/>;
