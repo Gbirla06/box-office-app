@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import { getShowById } from "../Api/tvmaz";
 import { useQuery } from "@tanstack/react-query";
 import ShowMainData from "../Components/shows/ShowMainData";
@@ -33,12 +33,15 @@ const Show = () =>{
         queryFn: () => getShowById(showId)
     });
 
+    
+
 
     if(showError){
         return <div>We have an error : {showError.message}</div>
     }
     if(showData){
         return <div>
+            <Link to="/">Go back to home</Link>
             <ShowMainData 
                 image={showData.image} 
                 name={showData.name} 
