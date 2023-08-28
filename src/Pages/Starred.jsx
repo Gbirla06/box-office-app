@@ -8,16 +8,25 @@ const Starred = () => {
   
   const {data:starredShows,error:starredshowsError} = useQuery({
     queryKey:['starred',starredShowsIds],
-    queryFn:async () => getShowByIds(starredShowsIds)
+    queryFn: () => getShowByIds(starredShowsIds).then(result => result.map(show => {
+      return {show}
+    }))
 
   })
 
-  if(starredShows){
-    return <ShowGrid />
+  // starredShows && starredShows.length>0
+  if(starredShows?.length===0){
+    return <div>No Shows were starred</div>
+  }
+  if(starredShows?.length>0){
+    return <ShowGrid shows={starredShows} />
+  }
+  if(starredshowsError){
+    return <div>Error occured : {starredshowsError.message}</div>
   }
 
   return <div>
-    Starred page {starredShowsIds.length};
+    Shows are still loading...
     </div>;
 };
 

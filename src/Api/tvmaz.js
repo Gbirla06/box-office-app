@@ -13,6 +13,5 @@ export const getShowById = (showId) => apiGet(`/shows/${showId}?embed[]=seasons&
 
 export const getShowByIds = async (showIds) =>{
   const promises = showIds.map(showId => apiGet(`/shows/${showId}`))
-  const result = await Promise.all(promises);
-  return result;
+  return Promise.all(promises);  
 }
