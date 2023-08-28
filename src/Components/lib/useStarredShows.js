@@ -1,5 +1,4 @@
 import { useEffect,useReducer } from "react";
-import ShowCard from "../shows/ShowCard";
 
 const usePersistedReducer = (reducer,initalState,localStorageKey) =>{
     const [state, dispatch] = useReducer(reducer,initalState,(initial)=>{

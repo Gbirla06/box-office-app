@@ -6,9 +6,8 @@ import ShowGrid from "../Components/shows/ShowGrid";
 import ActorsGrid from "../Components/actors/ActorsGrid";
 
 
-
 const Home = () => {
-
+  
   const [filter, setFilter] = useState(null)
   
 
@@ -43,6 +42,7 @@ const Home = () => {
   };
   return (
     <div>
+      
       <SearchForm onSearch={onSearch} />
       <div>{renderApiData()}</div>
     </div>
