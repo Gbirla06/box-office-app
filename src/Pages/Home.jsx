@@ -10,6 +10,7 @@ import ActorsGrid from "../Components/actors/ActorsGrid";
 const Home = () => {
 
   const [filter, setFilter] = useState(null)
+  
 
   const { data: apiData, error: apiDataError } = useQuery({
       queryKey: ['search', filter],

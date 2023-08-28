@@ -12,9 +12,9 @@ const SearchForm = ({onSearch}) =>{
     */
    console.log("Component rerender");
     useEffect(()=> {
-      console.log("Component mount")
+      // console.log("Component mount")
       return () =>{
-        console.log("Component unmount")
+        // console.log("Component unmount")
       }
     },[]);
 
