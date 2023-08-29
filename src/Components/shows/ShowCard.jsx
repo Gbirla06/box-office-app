@@ -15,7 +15,10 @@ const ShowCard = ({name,image,id,summary,onStarMeClick,isStarred}) =>{
             <p>{summaryStripped}</p>
             <ActionSection>
                 <a href={`/show/${id}`} target="_blank" rel="noreferrer">Read more</a>
-                <StarBtn type="button" onClick={() => onStarMeClick(id)} >
+                <StarBtn 
+                  type="button" 
+                  onClick={() => onStarMeClick(id)} 
+                >
                     <StarIcon active={isStarred}/>
                     {/* {isStarred ? 'UnStar Me' : 'Star Me'} */}
                 </StarBtn>
@@ -53,4 +56,5 @@ const StarBtn = styled.button`
   &:hover {
     cursor: pointer;
   }
+  
 `;
